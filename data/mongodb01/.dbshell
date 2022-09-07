@@ -1,0 +1,4 @@
+rs.config()
+> config = {    _id : "rs0",    members: [       { _id: 0, host: "127.0.0.1:8001" },       { _id: 1, host: "127.0.0.1:8002" },       { _id: 2, host: "127.0.0.1:8003", arbiterOnly: true },    ] }
+rs.initiate();
+rs.config()

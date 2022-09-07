@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INIT_ROOT_USERNAME=rootuser
+      - MONGO_INIT_ROOT_PASSWORD=rootpass
+    #永続化
+    volumes:
+      - data:/data
+  mongo-express2:
+    image: mongo-express
+    container_name: mongo-express-replica2
+    restart: always
+    ports:
+      - 8083:8083
+volumes:
+    data: {}
+    
+networks:
+    default:
+      name: mongodb_network
+      
